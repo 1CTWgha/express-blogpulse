@@ -32,9 +32,13 @@ app.get('/', function(req, res) {
   });
 });
 
+var db = require('./models');
+
+
 // bring in authors and posts controllers
 app.use('/authors', require('./controllers/authors'));
 app.use('/posts', require('./controllers/posts'));
+
 
 var server = app.listen(process.env.PORT || 3000);
 

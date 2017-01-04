@@ -1,8 +1,6 @@
-<h1><%= post.title %> <small>by <%= post.author.getFullName() %></small></h1>
-
 <h1>Create a new comment</h1>
 
-<form action="/posts/<%= post.id %>" method="POST">
+<form action="/posts" method="POST">
   <div class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title" required>
@@ -15,18 +13,3 @@
 
   <input type="submit" class="btn btn-primary">
 </form>
-
-<p>
-  <strong><%= moment(post.createdAt).calendar() %></strong>
-</p>
-
-<p><%= post.content %></p>
-
-<% for(var i=0; i<post.comments.length; i++) {%>
-   <p><h3><%= post.comments[i].name %></h3>
-   <%= post.comments[i].content %></p>
-<% } %>
-
-<hr />
-
-<a href="/">&larr; Back Home</a>
